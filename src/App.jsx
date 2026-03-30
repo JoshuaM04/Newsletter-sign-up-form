@@ -1,8 +1,8 @@
 export default function Newsletter() {
     return (
-        <fragment className="bg-red-100">
-            <header>
-                <h1>Stay updated!</h1>
+        <fragment className="flex flex-col justify-center items-center min-h-screen p-5">
+            <header className="w-full">
+                <h1 className="text-left">Stay updated!</h1>
             </header>
 
             <main>
@@ -13,9 +13,9 @@ export default function Newsletter() {
                 <li>And much more!</li>
             </ul>
 
-            <label htmlFor="">Email address</label>
+            <label htmlFor="email">Email address</label>
             <br />
-            <input type="text" placeholder="email@company.com"></input>
+            <input id="email" type="text" placeholder="email@company.com" />
             <br />
 
             <button>Subscribe to monthly newsletter</button>
