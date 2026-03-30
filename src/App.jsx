@@ -2,11 +2,15 @@ export default function Newsletter() {
     return (
         <fragment className="flex flex-col justify-center items-center min-h-screen p-5">
             <header className="w-full">
+                <div className="img-container">
+                    <img src="assets/images/illustration-sign-up-mobile.svg" alt="" aria-hidden="true"/>
+                </div>
                 <h1 className="text-left">Stay updated!</h1>
             </header>
 
             <main>
             <p>Join 60,000+ product managers receiving monthly updates on:</p>
+
             <ul>
                 <li>Product discovery and building what matters</li>
                 <li>Measuring to ensure updates are a success</li>
@@ -21,15 +25,17 @@ export default function Newsletter() {
             <button>Subscribe to monthly newsletter</button>
 
             <div className="pop-up" aria-hidden="true" hidden>
-                Thanks for subscribing!
+                <h1>Thanks for subscribing!</h1>
 
-                A confirmation email has been sent to ash@loremcompany.com. 
-                Please open it and click the button inside to confirm your subscription.
+                <p>
+                    A confirmation email has been sent to ash@loremcompany.com.
+                    Please open it and click the button inside to confirm your subscription.
+                </p>
 
-                Dismiss message
+                <button>Dismiss message</button>
             </div>
-
             </main>
+
             <footer>
                 Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
                 Coded by <a href="#">Your Name Here</a>.
