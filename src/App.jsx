@@ -1,34 +1,39 @@
-import { useState } from 'react';
-
 export default function Newsletter() {
     return (
-        <div className="bg-red-100">
-            <p>
-            Stay updated!
+        <fragment className="bg-red-100">
+            <header>
+                <h1>Stay updated!</h1>
+            </header>
 
-            Join 60,000+ product managers receiving monthly updates on:
+            <main>
+            <p>Join 60,000+ product managers receiving monthly updates on:</p>
+            <ul>
+                <li>Product discovery and building what matters</li>
+                <li>Measuring to ensure updates are a success</li>
+                <li>And much more!</li>
+            </ul>
 
-            Product discovery and building what matters
-            Measuring to ensure updates are a success
-            And much more!
+            <label htmlFor="">Email address</label>
+            <br />
+            <input type="text" placeholder="email@company.com"></input>
+            <br />
 
-            Email address
-            email@company.com
+            <button>Subscribe to monthly newsletter</button>
 
-            Subscribe to monthly newsletter
+            <div className="pop-up" aria-hidden="true" hidden>
+                Thanks for subscribing!
 
-            Thanks for subscribing!
+                A confirmation email has been sent to ash@loremcompany.com. 
+                Please open it and click the button inside to confirm your subscription.
 
-            A confirmation email has been sent to ash@loremcompany.com. 
-            Please open it and click the button inside to confirm your subscription.
+                Dismiss message
+            </div>
 
-            Dismiss message
-            </p>
-            
-            <div class="attribution">
+            </main>
+            <footer>
                 Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
                 Coded by <a href="#">Your Name Here</a>.
-            </div>
-        </div>
+            </footer>
+        </fragment>
     );
 }
