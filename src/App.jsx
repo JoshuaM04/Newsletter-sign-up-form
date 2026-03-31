@@ -14,8 +14,10 @@ export default function Newsletter() {
 
    
         if (validateEmail(emailString)) {
+            emailVal.classList.add("bg-sky-500");
             console.log("Correct Format!");
         } else {
+            emailVal.style.backgroundColor = "red"; 
             console.log("Incorrect Format!");
         }
     }
@@ -42,7 +44,7 @@ export default function Newsletter() {
                     <label htmlFor="email" className="font-medium">Email address</label>
                     <input id="email" className="emailInput w-full border-1 rounded-md pl-5 py-4" name="email" placeholder="email@company.com" aria-required="true" />
                     
-                    <button type="submit"
+                    <button type="button"
                             className="w-full bg-slate-800 rounded-md py-4 text-white font-medium hover:cursor-pointer hover:bg-slate-700"
                             aria-haspopup="dialog"
                             onClick={handleSubmit}
