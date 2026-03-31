@@ -1,10 +1,12 @@
+import mobileIllustration from './assets/images/illustration-sign-up-mobile.svg';
+
 export default function Newsletter() {
     return (
         <fragment className="flex flex-col justify-center items-center min-h-screen p-5 gap-5 w-xs">
-            <header className="flex flex-col w-full">
-                <div className="img-container">
-                    <img src="assets/images/illustration-sign-up-mobile.svg" alt="" aria-hidden="true"/>
-                </div>
+            <div className="img-container w-screen sm:w-full">
+                    <img src={mobileIllustration} alt="" aria-hidden="true" className="w-full"/>
+            </div>
+            <header className="w-full">
                 <h1 className="text-left text-4xl font-bold">Stay updated!</h1>
             </header>
 
