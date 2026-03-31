@@ -1,7 +1,7 @@
 export default function Newsletter() {
     return (
         <fragment className="flex flex-col justify-center items-center min-h-screen p-5 gap-5">
-            <header className="w-full">
+            <header className="flex flex-col">
                 <div className="img-container">
                     <img src="assets/images/illustration-sign-up-mobile.svg" alt="" aria-hidden="true"/>
                 </div>
