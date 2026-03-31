@@ -4,15 +4,16 @@ export default function Newsletter() {
     function handleSubmit() {
         const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
         const emailVal = document.querySelector(".emailInput");
+        const emailString = String(emailVal.value);
 
-        console.log("Input Value: " + emailVal.value);
+        console.log("Input Value: " + emailString);
 
-        const validateEmail = (emailVal) => {
-            return emailVal.match(emailRegex);
+        const validateEmail = (emailString) => {
+            return emailString.match(emailRegex);
         };
 
    
-        if (validateEmail(emailVal)) {
+        if (validateEmail(emailString)) {
             console.log("Correct Format!");
         } else {
             console.log("Incorrect Format!");
