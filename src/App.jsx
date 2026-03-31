@@ -44,7 +44,7 @@ export default function Newsletter() {
                 </div>
             </main>
 
-            <footer className="absolute bottom-0 w-xs text-center">
+            <footer className="relative bottom-0 w-xs text-center">
                 Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
                 Coded by <a href="#"></a>.
             </footer>
