@@ -4,7 +4,9 @@ export default function Newsletter() {
     function handleSubmit() {
         const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
         const emailVal = document.querySelector(".emailInput");
+        const inputHeading = document.querySelector(".input-heading");
         const emailString = String(emailVal.value);
+        let count = 0;
 
         console.log("Input Value: " + emailString);
 
@@ -14,10 +16,16 @@ export default function Newsletter() {
 
    
         if (validateEmail(emailString)) {
-            emailVal.classList.add("bg-sky-500");
             console.log("Correct Format!");
         } else {
-            emailVal.style.backgroundColor = "red"; 
+            // MUST FIX | ADDS MULTIPLE ERROR MESSAGES
+            emailVal.classList.add("bg-red-100", "text-red-600");
+            const para = document.createElement("p");
+            const element = document.createTextNode("Valid email required");
+            para.appendChild(element);
+            inputHeading.appendChild(para);
+            para.classList.add("text-red-600", "font-medium");
+
             console.log("Incorrect Format!");
         }
     }
@@ -41,7 +49,9 @@ export default function Newsletter() {
                 </ul>
 
                 <form action="" className="flex flex-col gap-4">
-                    <label htmlFor="email" className="font-medium">Email address</label>
+                    <div className="flex flex-row justify-between input-heading">
+                        <label htmlFor="email" className="font-medium">Email address</label>
+                    </div>
                     <input id="email" className="emailInput w-full border-1 rounded-md pl-5 py-4" name="email" placeholder="email@company.com" aria-required="true" />
                     
                     <button type="button"
