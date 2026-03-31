@@ -1,6 +1,24 @@
 import mobileIllustration from './assets/images/illustration-sign-up-mobile.svg';
 
 export default function Newsletter() {
+    function handleSubmit() {
+        const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        const emailVal = document.querySelector(".emailInput");
+
+        console.log("Input Value: " + emailVal.value);
+
+        const validateEmail = (emailVal) => {
+            return emailVal.match(emailRegex);
+        };
+
+   
+        if (validateEmail(emailVal)) {
+            console.log("Correct Format!");
+        } else {
+            console.log("Incorrect Format!");
+        }
+    }
+
     return (
         <div className="flex flex-col justify-center items-center min-h-screen p-5 gap-5 w-xs">
             <div className="img-container w-screen sm:w-full">
@@ -21,11 +39,12 @@ export default function Newsletter() {
 
                 <form action="" className="flex flex-col gap-4">
                     <label htmlFor="email" className="font-medium">Email address</label>
-                    <input id="email" className="w-full border-1 rounded-md pl-5 py-4" type="text" placeholder="email@company.com" aria-required="true" required />
+                    <input id="email" className="emailInput w-full border-1 rounded-md pl-5 py-4" name="email" placeholder="email@company.com" aria-required="true" />
                     
                     <button type="submit"
                             className="w-full bg-slate-800 rounded-md py-4 text-white font-medium hover:cursor-pointer hover:bg-slate-700"
                             aria-haspopup="dialog"
+                            onClick={handleSubmit}
                     >
                         Subscribe to monthly newsletter
                     </button>
