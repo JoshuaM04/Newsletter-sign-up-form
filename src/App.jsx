@@ -2,7 +2,7 @@ import mobileIllustration from './assets/images/illustration-sign-up-mobile.svg'
 
 export default function Newsletter() {
     return (
-        <fragment className="flex flex-col justify-center items-center min-h-screen p-5 gap-5 w-xs">
+        <div className="flex flex-col justify-center items-center min-h-screen p-5 gap-5 w-xs">
             <div className="img-container w-screen sm:w-full">
                     <img src={mobileIllustration} alt="" aria-hidden="true" className="w-full"/>
             </div>
@@ -19,18 +19,17 @@ export default function Newsletter() {
                     <li className="list-inside list-image-[url(assets/images/icon-list.svg)]"><span className="align-top">And much more!</span></li>
                 </ul>
 
-                <div>
+                <form action="" className="flex flex-col gap-4">
                     <label htmlFor="email" className="font-medium">Email address</label>
-                    <input id="email" className="w-full border-1 rounded-md pl-5 py-4" type="text" placeholder="email@company.com" aria-required="true" />
-                    <br />
-                </div>
-
-                <button type="submit" 
-                        className="w-full bg-slate-800 rounded-md py-4 text-white font-medium hover:cursor-pointer hover:bg-slate-700" 
-                        aria-haspopup="dialog"
-                >
-                    Subscribe to monthly newsletter
-                </button>
+                    <input id="email" className="w-full border-1 rounded-md pl-5 py-4" type="text" placeholder="email@company.com" aria-required="true" required />
+                    
+                    <button type="submit"
+                            className="w-full bg-slate-800 rounded-md py-4 text-white font-medium hover:cursor-pointer hover:bg-slate-700"
+                            aria-haspopup="dialog"
+                    >
+                        Subscribe to monthly newsletter
+                    </button>
+                </form>
 
                 <div className="pop-up" aria-hidden="true" hidden>
                     <h1>Thanks for subscribing!</h1>
@@ -48,6 +47,6 @@ export default function Newsletter() {
                 Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
                 Coded by <a href="#"></a>.
             </footer>
-        </fragment>
+        </div>
     );
 }
