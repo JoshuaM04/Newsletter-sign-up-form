@@ -12,9 +12,9 @@ export default function Newsletter() {
                 <p>Join 60,000+ product managers receiving monthly updates on:</p>
 
                 <ul>
-                    <li>Product discovery and building what matters</li>
-                    <li>Measuring to ensure updates are a success</li>
-                    <li>And much more!</li>
+                    <li className="list-inside list-image-[url(assets/images/icon-list.svg)]"><span className="align-top">Product discovery and building what matters</span></li>
+                    <li className="list-inside list-image-[url(assets/images/icon-list.svg)]"><span className="align-top">Measuring to ensure updates are a success</span></li>
+                    <li className="list-inside list-image-[url(assets/images/icon-list.svg)]"><span className="align-top">And much more!</span></li>
                 </ul>
 
                 <div>
@@ -42,9 +42,9 @@ export default function Newsletter() {
                 </div>
             </main>
 
-            <footer className="absolute bottom-0">
+            <footer className="absolute bottom-0 w-xs text-center">
                 Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-                Coded by <a href="#">Your Name Here</a>.
+                Coded by <a href="#"></a>.
             </footer>
         </fragment>
     );
