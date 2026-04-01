@@ -52,7 +52,7 @@ export default function Newsletter() {
     }
 
     return (
-        <div className="flex flex-col justify-center items-center min-h-screen gap-5 w-xs">
+        <div className="flex flex-col justify-between items-center min-h-screen gap-5 w-xs">
             <div className="img-container w-screen">
                     <img src={mobileIllustration} alt="" aria-hidden="true" className="w-full"/>
             </div>
@@ -84,18 +84,19 @@ export default function Newsletter() {
                 </form>
             </main>
 
-            <div className="pop-up min-h-screen flex flex-col justify-center gap-5" aria-hidden="true" hidden>
-                <h1>Thanks for subscribing!</h1>
+            <div className="pop-up min-h-screen grid grid-rows-[1fr_auto_1fr]" aria-hidden="true" hidden>
+                <div className="row-start-2">
+                    <h1>Thanks for subscribing!</h1>
+                    <p>
+                        A confirmation email has been sent to ash@loremcompany.com.
+                        Please open it and click the button inside to confirm your subscription.
+                    </p>
+                </div>
 
-                <p>
-                    A confirmation email has been sent to ash@loremcompany.com.
-                    Please open it and click the button inside to confirm your subscription.
-                </p>
-
-                <button className="flex-start w-full bg-slate-800 rounded-md py-4 text-white font-medium hover:cursor-pointer hover:bg-slate-700">Dismiss message</button>
+                <button className="row-start-3 self-end w-full bg-slate-800 rounded-md py-4 text-white font-medium hover:cursor-pointer hover:bg-slate-700">Dismiss message</button>
             </div>
 
-            <footer className="fixed bottom-0 w-xs text-center">
+            <footer className="relative bottom-0 w-xs text-center">
                 Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
                 Coded by <a href="#"></a>.
             </footer>
