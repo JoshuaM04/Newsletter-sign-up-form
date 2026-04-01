@@ -1,12 +1,14 @@
 import mobileIllustration from './assets/images/illustration-sign-up-mobile.svg';
 
 export default function Newsletter() {
+    let count = 0;
+
     function handleSubmit() {
         const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
         const emailVal = document.querySelector(".emailInput");
         const inputHeading = document.querySelector(".input-heading");
+        const subscribtBtn = document.querySelector(".subscribe-button");
         const emailString = String(emailVal.value);
-        let count = 0;
 
         console.log("Input Value: " + emailString);
 
@@ -18,21 +20,25 @@ export default function Newsletter() {
         if (validateEmail(emailString)) {
             console.log("Correct Format!");
         } else {
-            // MUST FIX | ADDS MULTIPLE ERROR MESSAGES
-            emailVal.classList.add("bg-red-100", "text-red-600");
-            const para = document.createElement("p");
-            const element = document.createTextNode("Valid email required");
-            para.appendChild(element);
-            inputHeading.appendChild(para);
-            para.classList.add("text-red-600", "font-medium");
+            if (count === 0) {
+                emailVal.classList.add("bg-red-100", "text-red-600");
+                const para = document.createElement("p");
+                const element = document.createTextNode("Valid email required");
+                para.appendChild(element);
+                inputHeading.appendChild(para);
+                para.classList.add("text-red-600", "font-medium");
 
-            console.log("Incorrect Format!");
+                console.log("Incorrect Format!");
+                console.log("Count: " + count);
+
+                count++;
+            }
         }
     }
 
     return (
-        <div className="flex flex-col justify-center items-center min-h-screen p-5 gap-5 w-xs">
-            <div className="img-container w-screen sm:w-full">
+        <div className="flex flex-col justify-center items-center min-h-screen gap-5 w-xs">
+            <div className="img-container w-screen">
                     <img src={mobileIllustration} alt="" aria-hidden="true" className="w-full"/>
             </div>
             <header className="w-full">
@@ -55,7 +61,7 @@ export default function Newsletter() {
                     <input id="email" className="emailInput w-full border-1 rounded-md pl-5 py-4" name="email" placeholder="email@company.com" aria-required="true" />
                     
                     <button type="button"
-                            className="w-full bg-slate-800 rounded-md py-4 text-white font-medium hover:cursor-pointer hover:bg-slate-700"
+                            className="subscribe-button w-full bg-slate-800 rounded-md py-4 text-white font-medium hover:cursor-pointer hover:bg-slate-700"
                             aria-haspopup="dialog"
                             onClick={handleSubmit}
                     >
