@@ -61,13 +61,22 @@ export default function Newsletter() {
                 <h1 className="text-left text-4xl font-bold">Stay updated!</h1>
 
                 <p>Join 60,000+ product managers receiving monthly updates on:</p>
+                
+                <div className="flex items-start">
+                    <div className="bg-['url(assets/images/icon-list.svg')]"></div>
+                    <div>Product discovery and building what matters</div>
+                </div>
 
-                <ul>
-                    <li className="list-inside list-image-[url(assets/images/icon-list.svg)]"><span className="align-top">Product discovery and building what matters</span></li>
-                    <li className="list-inside list-image-[url(assets/images/icon-list.svg)]"><span className="align-top">Measuring to ensure updates are a success</span></li>
-                    <li className="list-inside list-image-[url(assets/images/icon-list.svg)]"><span className="align-top">And much more!</span></li>
-                </ul>
+                <div className="flex items-start">
+                    <div className="bg-['url(assets/images/icon-list.svg')]"></div>
+                    <div>Measuring to ensure updates are a success</div>
+                </div>
 
+                <div className="flex items-start">
+                    <div className="bg-image-['url(assets/images/icon-list.svg')]"></div>
+                    <div>And much more!</div>
+                </div>
+                
                 <form action="" className="flex flex-col gap-4">
                     <div className="flex flex-row justify-between input-heading">
                         <label htmlFor="email" className="font-medium">Email address</label>
