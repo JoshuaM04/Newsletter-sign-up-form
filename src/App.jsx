@@ -55,12 +55,12 @@ export default function Newsletter() {
     }
 
     return (
-        <div className="flex flex-col justify-between items-center min-h-screen gap-5 w-xs">
-            <div className="img-container sm-screen">
-                    <img src={mobileIllustration} alt="" aria-hidden="true" className="w-full"/>
-            </div>
-
-            <main className="flex flex-col gap-5">
+        <div className="body-container flex flex-col justify-center items-center gap-5 w-xs bg-white rounded-md">
+            <main className="flex flex-col gap-5 w-xs p-5">
+                <div className="img-container w-xs w-full -ml-5 -mt-5 rounded-md">
+                    <img src={mobileIllustration} alt="" aria-hidden="true" className="rounded-md" />
+                </div>
+            
                 <h1 className="text-left text-4xl font-bold">Stay updated!</h1>
 
                 <p>Join 60,000+ product managers receiving monthly updates on:</p>
@@ -120,7 +120,7 @@ export default function Newsletter() {
                     Dismiss message</button>
             </div>
 
-            <footer className="relative bottom-0 w-xs text-center">
+            <footer className="fixed bottom-0 w-xs text-center text-white">
                 Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
                 Coded by <a href="#"></a>.
             </footer>
