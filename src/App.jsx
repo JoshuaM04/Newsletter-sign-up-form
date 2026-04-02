@@ -62,18 +62,18 @@ export default function Newsletter() {
 
                 <p>Join 60,000+ product managers receiving monthly updates on:</p>
                 
-                <div className="flex items-start">
-                    <div className="bg-['url(assets/images/icon-list.svg')]"></div>
+                <div className="flex items-center">
+                    <div className="bg-[url(assets/images/icon-list.svg)] shrink-0 basis-10 min-h-10 bg-no-repeat bg-top"></div>
                     <div>Product discovery and building what matters</div>
                 </div>
 
-                <div className="flex items-start">
-                    <div className="bg-['url(assets/images/icon-list.svg')]"></div>
+                <div className="flex items-center">
+                    <div className="bg-[url(assets/images/icon-list.svg)] shrink-0 basis-10 min-h-10 bg-no-repeat bg-top"></div>
                     <div>Measuring to ensure updates are a success</div>
                 </div>
 
                 <div className="flex items-start">
-                    <div className="bg-image-['url(assets/images/icon-list.svg')]"></div>
+                    <div className="bg-[url(assets/images/icon-list.svg)] shrink-0 basis-10 min-h-10 bg-no-repeat bg-top"></div>
                     <div>And much more!</div>
                 </div>
                 
