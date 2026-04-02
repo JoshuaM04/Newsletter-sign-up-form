@@ -12,29 +12,32 @@ export default function Newsletter() {
 
         console.log("Input Value: " + emailString);
 
+        const imgContainer = document.querySelector(".img-container");
+        const mainContainer = document.querySelector("main");
+        const dialogMsg = document.querySelector(".pop-up");
+
+
         const validateEmail = (emailString) => {
             return emailString.match(emailRegex);
         };
 
         const para = document.createElement("p");
+        para.setAttribute("class", "error-msg");
         const element = document.createTextNode("Valid email required");
 
         if (validateEmail(emailString)) {
             console.log("Correct Format!");
 
-            const imgContainer = document.querySelector(".img-container");
-            const mainContainer = document.querySelector("main");
-            const dialogMsg = document.querySelector(".pop-up");
-
             imgContainer.setAttribute("hidden", true);
             mainContainer.setAttribute("hidden", true);
             dialogMsg.removeAttribute("hidden");
 
-
             if (count > 0) {
                 emailVal.classList.remove("bg-red-100", "text-red-600");
+
+                const removePara = document.querySelector(".error-msg");
+                inputHeading.removeChild(removePara);
                 
-                // Unable to remove 'para' and 'element'
             }
         } else {
             if (count === 0) {
@@ -53,7 +56,7 @@ export default function Newsletter() {
 
     return (
         <div className="flex flex-col justify-between items-center min-h-screen gap-5 w-xs">
-            <div className="img-container w-screen">
+            <div className="img-container sm-screen">
                     <img src={mobileIllustration} alt="" aria-hidden="true" className="w-full"/>
             </div>
 
@@ -102,7 +105,19 @@ export default function Newsletter() {
                     </p>
                 </div>
 
-                <button className="row-start-3 self-end w-full bg-slate-800 rounded-md py-4 text-white font-medium hover:cursor-pointer hover:bg-slate-700">Dismiss message</button>
+                <button type="button"
+                        className="row-start-3 self-end w-full bg-slate-800 rounded-md py-4 text-white font-medium hover:cursor-pointer hover:bg-slate-700"
+                        onClick={() => {
+                            const imgContainer = document.querySelector(".img-container");
+                            const mainContainer = document.querySelector("main");
+                            const dialogMsg = document.querySelector(".pop-up");
+
+                            imgContainer.removeAttribute("hidden");
+                            mainContainer.removeAttribute("hidden");
+                            dialogMsg.setAttribute("hidden", true);
+                        }}
+                >
+                    Dismiss message</button>
             </div>
 
             <footer className="relative bottom-0 w-xs text-center">
