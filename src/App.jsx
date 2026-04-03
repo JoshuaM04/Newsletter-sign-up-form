@@ -1,4 +1,5 @@
 import mobileIllustration from './assets/images/illustration-sign-up-mobile.svg';
+import successIcon from './assets/images/icon-success.svg';
 
 export default function Newsletter() {
     let count = 0;
@@ -96,28 +97,32 @@ export default function Newsletter() {
                 </form>
             </main>
 
-            <div className="pop-up min-h-screen grid grid-rows-[1fr_auto_1fr]" aria-hidden="true" hidden>
-                <div className="row-start-2">
-                    <h1>Thanks for subscribing!</h1>
+            <div className="pop-up flex flex-col gap-20 justify-between p-5 h-194" aria-hidden="true" hidden>
+                <div className="flex flex-col gap-10 mt-30">
+                    <div className="w-full">
+                        <img src={successIcon} aria-hidden="true" />
+                    </div>
+                    <h1 className="text-4xl font-bold">Thanks for subscribing!</h1>
                     <p>
-                        A confirmation email has been sent to ash@loremcompany.com.
+                        A confirmation email has been sent to <span className="font-medium">ash@loremcompany.com</span>.
                         Please open it and click the button inside to confirm your subscription.
                     </p>
                 </div>
 
                 <button type="button"
-                        className="row-start-3 self-end w-full bg-slate-800 rounded-md py-4 text-white font-medium hover:cursor-pointer hover:bg-slate-700"
-                        onClick={() => {
-                            const imgContainer = document.querySelector(".img-container");
-                            const mainContainer = document.querySelector("main");
-                            const dialogMsg = document.querySelector(".pop-up");
+                    className="row-start-3 self-end w-full bg-slate-800 rounded-md py-4 text-white font-medium hover:cursor-pointer hover:bg-slate-700"
+                    onClick={() => {
+                        const imgContainer = document.querySelector(".img-container");
+                        const mainContainer = document.querySelector("main");
+                        const dialogMsg = document.querySelector(".pop-up");
 
-                            imgContainer.removeAttribute("hidden");
-                            mainContainer.removeAttribute("hidden");
-                            dialogMsg.setAttribute("hidden", true);
-                        }}
+                        imgContainer.removeAttribute("hidden");
+                        mainContainer.removeAttribute("hidden");
+                        dialogMsg.setAttribute("hidden", true);
+                    }}
                 >
-                    Dismiss message</button>
+                    Dismiss message
+                </button>
             </div>
 
             <footer className="fixed bottom-0 w-xs text-center text-white">
