@@ -125,9 +125,9 @@ export default function Newsletter() {
                 </button>
             </div>
 
-            <footer className="fixed bottom-0 w-xs text-center text-white">
+            <footer className="fixed bottom-0 w-xs md:w-md text-center text-white">
                 Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-                Coded by <a href="#"></a>.
+                Coded by <a href="https://www.frontendmentor.io/profile/JoshuaM04" target="_blank" className="text-blue-400 hover:font-medium">Joshua Martinez</a>.
             </footer>
         </div>
     );
